@@ -20,6 +20,9 @@ part './crusade_force/crusade_force_dao.dart';
 part './note/note_dao.dart';
 part './order_of_battle/order_of_battle_dao.dart';
 part './psychic_power/psychic_power_dao.dart';
+part './relic/relic_dao.dart';
+part './unit_model/unit_model_dao.dart';
+part './warlord_trait/warlord_trait_dao.dart';
 part 'app_database.g.dart';
 
 @UseMoor(tables: [
@@ -41,6 +44,9 @@ part 'app_database.g.dart';
   NoteDao,
   OrderOfBattleDao,
   PsychicPowerDao,
+  RelicDao,
+  UnitModelDao,
+  WarlordTraitDao,
 ])
 class AppDatabase extends _$AppDatabase {
   AppDatabase() : super(FlutterQueryExecutor.inDatabaseFolder(path: 'db.sqlite', logStatements: true));

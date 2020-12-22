@@ -5246,6 +5246,14 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   PsychicPowerDao _psychicPowerDao;
   PsychicPowerDao get psychicPowerDao =>
       _psychicPowerDao ??= PsychicPowerDao(this as AppDatabase);
+  RelicDao _relicDao;
+  RelicDao get relicDao => _relicDao ??= RelicDao(this as AppDatabase);
+  UnitModelDao _unitModelDao;
+  UnitModelDao get unitModelDao =>
+      _unitModelDao ??= UnitModelDao(this as AppDatabase);
+  WarlordTraitDao _warlordTraitDao;
+  WarlordTraitDao get warlordTraitDao =>
+      _warlordTraitDao ??= WarlordTraitDao(this as AppDatabase);
   @override
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
@@ -5287,4 +5295,13 @@ mixin _$OrderOfBattleDaoMixin on DatabaseAccessor<AppDatabase> {
 }
 mixin _$PsychicPowerDaoMixin on DatabaseAccessor<AppDatabase> {
   $PsychicPowersTable get psychicPowers => attachedDatabase.psychicPowers;
+}
+mixin _$RelicDaoMixin on DatabaseAccessor<AppDatabase> {
+  $RelicsTable get relics => attachedDatabase.relics;
+}
+mixin _$UnitModelDaoMixin on DatabaseAccessor<AppDatabase> {
+  $UnitModelsTable get unitModels => attachedDatabase.unitModels;
+}
+mixin _$WarlordTraitDaoMixin on DatabaseAccessor<AppDatabase> {
+  $WarlordTraitsTable get warlordTraits => attachedDatabase.warlordTraits;
 }
