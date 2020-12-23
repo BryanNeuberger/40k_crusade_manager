@@ -1,6 +1,7 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
-class PsychicPowers extends Table {
+@DataClassName("PsychicPowerEntity")
+class PsychicPowerEntities extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get crusadeCardId => integer()();
   TextColumn get name => text().withLength(min: 1, max: 150)();

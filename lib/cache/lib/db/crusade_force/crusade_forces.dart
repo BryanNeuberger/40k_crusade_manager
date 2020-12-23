@@ -1,6 +1,7 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
-class CrusadeForces extends Table {
+@DataClassName("CrusadeForceEntity")
+class CrusadeForceEntities extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get crusadeFactionKeyword => text().withLength(min: 3, max: 25)();
   TextColumn get description => text().nullable()();

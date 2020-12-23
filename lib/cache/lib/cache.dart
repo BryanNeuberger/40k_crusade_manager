@@ -1,7 +1,1 @@
-library cache;
-
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export './db/app_database.dart';

@@ -1,14 +1,21 @@
 part of '../app_database.dart';
 
-@UseDao(tables: [CrusadeForces])
+@UseDao(tables: [CrusadeForceEntities])
 class CrusadeForceDao extends DatabaseAccessor<AppDatabase> with _$CrusadeForceDaoMixin {
   final AppDatabase db;
 
   CrusadeForceDao(this.db) : super(db);
 
-  Future<List<CrusadeForce>> getAll() => select(db.crusadeForces).get();
-  Future<CrusadeForce> getItem(int id) => (select(db.crusadeForces)..where((tbl) => tbl.id.equals(id))).getSingle();
-  Future insertItem(Insertable<CrusadeForce> item) => into(db.crusadeForces).insert(item);
-  Future updateItem(Insertable<CrusadeForce> item) => update(db.crusadeForces).replace(item);
-  Future deleteItem(Insertable<CrusadeForce> item) => delete(db.crusadeForces).delete(item);
+  Future<List<CrusadeForceEntity>> getAll() => select(db.crusadeForceEntities).get();
+  Future<CrusadeForceEntity> getItem(int id) => (select(db.crusadeForceEntities)..where((tbl) => tbl.id.equals(id))).getSingle();
+  Future<int> insertItem(Insertable<CrusadeForceEntity> item) => into(db.crusadeForceEntities).insert(item);
+  Future<bool> updateItem(Insertable<CrusadeForceEntity> item) => update(db.crusadeForceEntities).replace(item);
+  Future<int> deleteItem(Insertable<CrusadeForceEntity> item) => delete(db.crusadeForceEntities).delete(item);
+
+  CrusadeForceEntitiesCompanion toCompanion(CrusadeForceEntity model) {
+    return CrusadeForceEntitiesCompanion(
+      crusadeFactionKeyword: Value(model.crusadeFactionKeyword),
+      description: Value(model.description),
+    );
+  }
 }

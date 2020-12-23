@@ -1,15 +1,16 @@
 // part of db;
 part of '../app_database.dart';
 
-@UseDao(tables: [BattleHonors])
+@UseDao(tables: [BattleHonorEntities])
 class BattleHonorDao extends DatabaseAccessor<AppDatabase> with _$BattleHonorDaoMixin {
   final AppDatabase db;
 
   BattleHonorDao(this.db) : super(db);
 
-  Future<List<BattleHonor>> getAll() => select(db.battleHonors).get();
-  Future<BattleHonor> getItem(int id) => (select(db.battleHonors)..where((tbl) => tbl.id.equals(id))).getSingle();
-  Future insertItem(Insertable<BattleHonor> battleHonor) => into(db.battleHonors).insert(battleHonor);
-  Future updateItem(Insertable<BattleHonor> battleHonor) => update(db.battleHonors).replace(battleHonor);
-  Future deleteItem(Insertable<BattleHonor> battleHonor) => delete(db.battleHonors).delete(battleHonor);
+  Future<List<BattleHonorEntity>> getAll() => select(db.battleHonorEntities).get();
+  Future<BattleHonorEntity> getItem(int id) =>
+      (select(db.battleHonorEntities)..where((tbl) => tbl.id.equals(id))).getSingle();
+  Future insertItem(Insertable<BattleHonorEntity> battleHonor) => into(db.battleHonorEntities).insert(battleHonor);
+  Future updateItem(Insertable<BattleHonorEntity> battleHonor) => update(db.battleHonorEntities).replace(battleHonor);
+  Future deleteItem(Insertable<BattleHonorEntity> battleHonor) => delete(db.battleHonorEntities).delete(battleHonor);
 }

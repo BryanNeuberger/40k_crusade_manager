@@ -1,13 +1,14 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'app_database.dart';
+part of app_cache;
 
 // **************************************************************************
 // MoorGenerator
 // **************************************************************************
 
 // ignore_for_file: unnecessary_brace_in_string_interps, unnecessary_this
-class BattleHonor extends DataClass implements Insertable<BattleHonor> {
+class BattleHonorEntity extends DataClass
+    implements Insertable<BattleHonorEntity> {
   final int id;
   final int crusadeCardId;
   final int typeId;
@@ -15,7 +16,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  BattleHonor(
+  BattleHonorEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.typeId,
@@ -23,13 +24,14 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory BattleHonor.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory BattleHonorEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return BattleHonor(
+    return BattleHonorEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -71,8 +73,8 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
     return map;
   }
 
-  BattleHonorsCompanion toCompanion(bool nullToAbsent) {
-    return BattleHonorsCompanion(
+  BattleHonorEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return BattleHonorEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -92,10 +94,10 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
     );
   }
 
-  factory BattleHonor.fromJson(Map<String, dynamic> json,
+  factory BattleHonorEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return BattleHonor(
+    return BattleHonorEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       typeId: serializer.fromJson<int>(json['typeId']),
@@ -119,7 +121,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
     };
   }
 
-  BattleHonor copyWith(
+  BattleHonorEntity copyWith(
           {int id,
           int crusadeCardId,
           int typeId,
@@ -127,7 +129,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      BattleHonor(
+      BattleHonorEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         typeId: typeId ?? this.typeId,
@@ -138,7 +140,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
       );
   @override
   String toString() {
-    return (StringBuffer('BattleHonor(')
+    return (StringBuffer('BattleHonorEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('typeId: $typeId, ')
@@ -164,7 +166,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is BattleHonor &&
+      (other is BattleHonorEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.typeId == this.typeId &&
@@ -174,7 +176,7 @@ class BattleHonor extends DataClass implements Insertable<BattleHonor> {
           other.updatedAt == this.updatedAt);
 }
 
-class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
+class BattleHonorEntitiesCompanion extends UpdateCompanion<BattleHonorEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<int> typeId;
@@ -182,7 +184,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const BattleHonorsCompanion({
+  const BattleHonorEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.typeId = const Value.absent(),
@@ -191,7 +193,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  BattleHonorsCompanion.insert({
+  BattleHonorEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required int typeId,
@@ -204,7 +206,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
         name = Value(name),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<BattleHonor> custom({
+  static Insertable<BattleHonorEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<int> typeId,
@@ -224,7 +226,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
     });
   }
 
-  BattleHonorsCompanion copyWith(
+  BattleHonorEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<int> typeId,
@@ -232,7 +234,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return BattleHonorsCompanion(
+    return BattleHonorEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       typeId: typeId ?? this.typeId,
@@ -272,7 +274,7 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
 
   @override
   String toString() {
-    return (StringBuffer('BattleHonorsCompanion(')
+    return (StringBuffer('BattleHonorEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('typeId: $typeId, ')
@@ -285,11 +287,11 @@ class BattleHonorsCompanion extends UpdateCompanion<BattleHonor> {
   }
 }
 
-class $BattleHonorsTable extends BattleHonors
-    with TableInfo<$BattleHonorsTable, BattleHonor> {
+class $BattleHonorEntitiesTable extends BattleHonorEntities
+    with TableInfo<$BattleHonorEntitiesTable, BattleHonorEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $BattleHonorsTable(this._db, [this._alias]);
+  $BattleHonorEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -376,13 +378,13 @@ class $BattleHonorsTable extends BattleHonors
   List<GeneratedColumn> get $columns =>
       [id, crusadeCardId, typeId, name, description, createdAt, updatedAt];
   @override
-  $BattleHonorsTable get asDslTable => this;
+  $BattleHonorEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'battle_honors';
+  String get $tableName => _alias ?? 'battle_honor_entities';
   @override
-  final String actualTableName = 'battle_honors';
+  final String actualTableName = 'battle_honor_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<BattleHonor> instance,
+  VerificationContext validateIntegrity(Insertable<BattleHonorEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -433,38 +435,40 @@ class $BattleHonorsTable extends BattleHonors
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  BattleHonor map(Map<String, dynamic> data, {String tablePrefix}) {
+  BattleHonorEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return BattleHonor.fromData(data, _db, prefix: effectivePrefix);
+    return BattleHonorEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $BattleHonorsTable createAlias(String alias) {
-    return $BattleHonorsTable(_db, alias);
+  $BattleHonorEntitiesTable createAlias(String alias) {
+    return $BattleHonorEntitiesTable(_db, alias);
   }
 }
 
-class BattleScar extends DataClass implements Insertable<BattleScar> {
+class BattleScarEntity extends DataClass
+    implements Insertable<BattleScarEntity> {
   final int id;
   final int crusadeCardId;
   final String name;
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  BattleScar(
+  BattleScarEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.name,
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory BattleScar.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory BattleScarEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return BattleScar(
+    return BattleScarEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -501,8 +505,8 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
     return map;
   }
 
-  BattleScarsCompanion toCompanion(bool nullToAbsent) {
-    return BattleScarsCompanion(
+  BattleScarEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return BattleScarEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -520,10 +524,10 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
     );
   }
 
-  factory BattleScar.fromJson(Map<String, dynamic> json,
+  factory BattleScarEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return BattleScar(
+    return BattleScarEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       name: serializer.fromJson<String>(json['name']),
@@ -545,14 +549,14 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
     };
   }
 
-  BattleScar copyWith(
+  BattleScarEntity copyWith(
           {int id,
           int crusadeCardId,
           String name,
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      BattleScar(
+      BattleScarEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         name: name ?? this.name,
@@ -562,7 +566,7 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
       );
   @override
   String toString() {
-    return (StringBuffer('BattleScar(')
+    return (StringBuffer('BattleScarEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -585,7 +589,7 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is BattleScar &&
+      (other is BattleScarEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.name == this.name &&
@@ -594,14 +598,14 @@ class BattleScar extends DataClass implements Insertable<BattleScar> {
           other.updatedAt == this.updatedAt);
 }
 
-class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
+class BattleScarEntitiesCompanion extends UpdateCompanion<BattleScarEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<String> name;
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const BattleScarsCompanion({
+  const BattleScarEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.name = const Value.absent(),
@@ -609,7 +613,7 @@ class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  BattleScarsCompanion.insert({
+  BattleScarEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required String name,
@@ -620,7 +624,7 @@ class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
         name = Value(name),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<BattleScar> custom({
+  static Insertable<BattleScarEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<String> name,
@@ -638,14 +642,14 @@ class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
     });
   }
 
-  BattleScarsCompanion copyWith(
+  BattleScarEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<String> name,
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return BattleScarsCompanion(
+    return BattleScarEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       name: name ?? this.name,
@@ -681,7 +685,7 @@ class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
 
   @override
   String toString() {
-    return (StringBuffer('BattleScarsCompanion(')
+    return (StringBuffer('BattleScarEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -693,11 +697,11 @@ class BattleScarsCompanion extends UpdateCompanion<BattleScar> {
   }
 }
 
-class $BattleScarsTable extends BattleScars
-    with TableInfo<$BattleScarsTable, BattleScar> {
+class $BattleScarEntitiesTable extends BattleScarEntities
+    with TableInfo<$BattleScarEntitiesTable, BattleScarEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $BattleScarsTable(this._db, [this._alias]);
+  $BattleScarEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -772,13 +776,13 @@ class $BattleScarsTable extends BattleScars
   List<GeneratedColumn> get $columns =>
       [id, crusadeCardId, name, description, createdAt, updatedAt];
   @override
-  $BattleScarsTable get asDslTable => this;
+  $BattleScarEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'battle_scars';
+  String get $tableName => _alias ?? 'battle_scar_entities';
   @override
-  final String actualTableName = 'battle_scars';
+  final String actualTableName = 'battle_scar_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<BattleScar> instance,
+  VerificationContext validateIntegrity(Insertable<BattleScarEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -823,18 +827,19 @@ class $BattleScarsTable extends BattleScars
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  BattleScar map(Map<String, dynamic> data, {String tablePrefix}) {
+  BattleScarEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return BattleScar.fromData(data, _db, prefix: effectivePrefix);
+    return BattleScarEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $BattleScarsTable createAlias(String alias) {
-    return $BattleScarsTable(_db, alias);
+  $BattleScarEntitiesTable createAlias(String alias) {
+    return $BattleScarEntitiesTable(_db, alias);
   }
 }
 
-class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
+class CrusadeCardEntity extends DataClass
+    implements Insertable<CrusadeCardEntity> {
   final int id;
   final int orderOfBattleId;
   final int powerRating;
@@ -858,7 +863,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  CrusadeCard(
+  CrusadeCardEntity(
       {@required this.id,
       @required this.orderOfBattleId,
       @required this.powerRating,
@@ -882,13 +887,14 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory CrusadeCard.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory CrusadeCardEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return CrusadeCard(
+    return CrusadeCardEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       orderOfBattleId: intType.mapFromDatabaseResponse(
           data['${effectivePrefix}order_of_battle_id']),
@@ -1013,8 +1019,8 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
     return map;
   }
 
-  CrusadeCardsCompanion toCompanion(bool nullToAbsent) {
-    return CrusadeCardsCompanion(
+  CrusadeCardEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return CrusadeCardEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       orderOfBattleId: orderOfBattleId == null && nullToAbsent
           ? const Value.absent()
@@ -1086,10 +1092,10 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
     );
   }
 
-  factory CrusadeCard.fromJson(Map<String, dynamic> json,
+  factory CrusadeCardEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return CrusadeCard(
+    return CrusadeCardEntity(
       id: serializer.fromJson<int>(json['id']),
       orderOfBattleId: serializer.fromJson<int>(json['orderOfBattleId']),
       powerRating: serializer.fromJson<int>(json['powerRating']),
@@ -1154,7 +1160,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
     };
   }
 
-  CrusadeCard copyWith(
+  CrusadeCardEntity copyWith(
           {int id,
           int orderOfBattleId,
           int powerRating,
@@ -1178,7 +1184,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      CrusadeCard(
+      CrusadeCardEntity(
         id: id ?? this.id,
         orderOfBattleId: orderOfBattleId ?? this.orderOfBattleId,
         powerRating: powerRating ?? this.powerRating,
@@ -1212,7 +1218,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
       );
   @override
   String toString() {
-    return (StringBuffer('CrusadeCard(')
+    return (StringBuffer('CrusadeCardEntity(')
           ..write('id: $id, ')
           ..write('orderOfBattleId: $orderOfBattleId, ')
           ..write('powerRating: $powerRating, ')
@@ -1291,7 +1297,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is CrusadeCard &&
+      (other is CrusadeCardEntity &&
           other.id == this.id &&
           other.orderOfBattleId == this.orderOfBattleId &&
           other.powerRating == this.powerRating &&
@@ -1320,7 +1326,7 @@ class CrusadeCard extends DataClass implements Insertable<CrusadeCard> {
           other.updatedAt == this.updatedAt);
 }
 
-class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
+class CrusadeCardEntitiesCompanion extends UpdateCompanion<CrusadeCardEntity> {
   final Value<int> id;
   final Value<int> orderOfBattleId;
   final Value<int> powerRating;
@@ -1344,7 +1350,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const CrusadeCardsCompanion({
+  const CrusadeCardEntitiesCompanion({
     this.id = const Value.absent(),
     this.orderOfBattleId = const Value.absent(),
     this.powerRating = const Value.absent(),
@@ -1369,7 +1375,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  CrusadeCardsCompanion.insert({
+  CrusadeCardEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int orderOfBattleId,
     @required int powerRating,
@@ -1417,7 +1423,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
             Value(enemyUnitsDestroyedWithMeleeWeapons),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<CrusadeCard> custom({
+  static Insertable<CrusadeCardEntity> custom({
     Expression<int> id,
     Expression<int> orderOfBattleId,
     Expression<int> powerRating,
@@ -1477,7 +1483,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
     });
   }
 
-  CrusadeCardsCompanion copyWith(
+  CrusadeCardEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> orderOfBattleId,
       Value<int> powerRating,
@@ -1501,7 +1507,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return CrusadeCardsCompanion(
+    return CrusadeCardEntitiesCompanion(
       id: id ?? this.id,
       orderOfBattleId: orderOfBattleId ?? this.orderOfBattleId,
       powerRating: powerRating ?? this.powerRating,
@@ -1616,7 +1622,7 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
 
   @override
   String toString() {
-    return (StringBuffer('CrusadeCardsCompanion(')
+    return (StringBuffer('CrusadeCardEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('orderOfBattleId: $orderOfBattleId, ')
           ..write('powerRating: $powerRating, ')
@@ -1648,11 +1654,11 @@ class CrusadeCardsCompanion extends UpdateCompanion<CrusadeCard> {
   }
 }
 
-class $CrusadeCardsTable extends CrusadeCards
-    with TableInfo<$CrusadeCardsTable, CrusadeCard> {
+class $CrusadeCardEntitiesTable extends CrusadeCardEntities
+    with TableInfo<$CrusadeCardEntitiesTable, CrusadeCardEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $CrusadeCardsTable(this._db, [this._alias]);
+  $CrusadeCardEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -1976,13 +1982,13 @@ class $CrusadeCardsTable extends CrusadeCards
         updatedAt
       ];
   @override
-  $CrusadeCardsTable get asDslTable => this;
+  $CrusadeCardEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'crusade_cards';
+  String get $tableName => _alias ?? 'crusade_card_entities';
   @override
-  final String actualTableName = 'crusade_cards';
+  final String actualTableName = 'crusade_card_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<CrusadeCard> instance,
+  VerificationContext validateIntegrity(Insertable<CrusadeCardEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -2162,36 +2168,38 @@ class $CrusadeCardsTable extends CrusadeCards
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  CrusadeCard map(Map<String, dynamic> data, {String tablePrefix}) {
+  CrusadeCardEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return CrusadeCard.fromData(data, _db, prefix: effectivePrefix);
+    return CrusadeCardEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $CrusadeCardsTable createAlias(String alias) {
-    return $CrusadeCardsTable(_db, alias);
+  $CrusadeCardEntitiesTable createAlias(String alias) {
+    return $CrusadeCardEntitiesTable(_db, alias);
   }
 }
 
-class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
+class CrusadeForceEntity extends DataClass
+    implements Insertable<CrusadeForceEntity> {
   final int id;
   final String crusadeFactionKeyword;
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  CrusadeForce(
+  CrusadeForceEntity(
       {@required this.id,
       @required this.crusadeFactionKeyword,
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory CrusadeForce.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory CrusadeForceEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return CrusadeForce(
+    return CrusadeForceEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeFactionKeyword: stringType.mapFromDatabaseResponse(
           data['${effectivePrefix}crusade_faction_keyword']),
@@ -2224,8 +2232,8 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
     return map;
   }
 
-  CrusadeForcesCompanion toCompanion(bool nullToAbsent) {
-    return CrusadeForcesCompanion(
+  CrusadeForceEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return CrusadeForceEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeFactionKeyword: crusadeFactionKeyword == null && nullToAbsent
           ? const Value.absent()
@@ -2242,10 +2250,10 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
     );
   }
 
-  factory CrusadeForce.fromJson(Map<String, dynamic> json,
+  factory CrusadeForceEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return CrusadeForce(
+    return CrusadeForceEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeFactionKeyword:
           serializer.fromJson<String>(json['crusadeFactionKeyword']),
@@ -2266,13 +2274,13 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
     };
   }
 
-  CrusadeForce copyWith(
+  CrusadeForceEntity copyWith(
           {int id,
           String crusadeFactionKeyword,
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      CrusadeForce(
+      CrusadeForceEntity(
         id: id ?? this.id,
         crusadeFactionKeyword:
             crusadeFactionKeyword ?? this.crusadeFactionKeyword,
@@ -2282,7 +2290,7 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
       );
   @override
   String toString() {
-    return (StringBuffer('CrusadeForce(')
+    return (StringBuffer('CrusadeForceEntity(')
           ..write('id: $id, ')
           ..write('crusadeFactionKeyword: $crusadeFactionKeyword, ')
           ..write('description: $description, ')
@@ -2302,7 +2310,7 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is CrusadeForce &&
+      (other is CrusadeForceEntity &&
           other.id == this.id &&
           other.crusadeFactionKeyword == this.crusadeFactionKeyword &&
           other.description == this.description &&
@@ -2310,20 +2318,21 @@ class CrusadeForce extends DataClass implements Insertable<CrusadeForce> {
           other.updatedAt == this.updatedAt);
 }
 
-class CrusadeForcesCompanion extends UpdateCompanion<CrusadeForce> {
+class CrusadeForceEntitiesCompanion
+    extends UpdateCompanion<CrusadeForceEntity> {
   final Value<int> id;
   final Value<String> crusadeFactionKeyword;
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const CrusadeForcesCompanion({
+  const CrusadeForceEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeFactionKeyword = const Value.absent(),
     this.description = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  CrusadeForcesCompanion.insert({
+  CrusadeForceEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required String crusadeFactionKeyword,
     this.description = const Value.absent(),
@@ -2332,7 +2341,7 @@ class CrusadeForcesCompanion extends UpdateCompanion<CrusadeForce> {
   })  : crusadeFactionKeyword = Value(crusadeFactionKeyword),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<CrusadeForce> custom({
+  static Insertable<CrusadeForceEntity> custom({
     Expression<int> id,
     Expression<String> crusadeFactionKeyword,
     Expression<String> description,
@@ -2349,13 +2358,13 @@ class CrusadeForcesCompanion extends UpdateCompanion<CrusadeForce> {
     });
   }
 
-  CrusadeForcesCompanion copyWith(
+  CrusadeForceEntitiesCompanion copyWith(
       {Value<int> id,
       Value<String> crusadeFactionKeyword,
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return CrusadeForcesCompanion(
+    return CrusadeForceEntitiesCompanion(
       id: id ?? this.id,
       crusadeFactionKeyword:
           crusadeFactionKeyword ?? this.crusadeFactionKeyword,
@@ -2389,7 +2398,7 @@ class CrusadeForcesCompanion extends UpdateCompanion<CrusadeForce> {
 
   @override
   String toString() {
-    return (StringBuffer('CrusadeForcesCompanion(')
+    return (StringBuffer('CrusadeForceEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeFactionKeyword: $crusadeFactionKeyword, ')
           ..write('description: $description, ')
@@ -2400,11 +2409,11 @@ class CrusadeForcesCompanion extends UpdateCompanion<CrusadeForce> {
   }
 }
 
-class $CrusadeForcesTable extends CrusadeForces
-    with TableInfo<$CrusadeForcesTable, CrusadeForce> {
+class $CrusadeForceEntitiesTable extends CrusadeForceEntities
+    with TableInfo<$CrusadeForceEntitiesTable, CrusadeForceEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $CrusadeForcesTable(this._db, [this._alias]);
+  $CrusadeForceEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -2467,13 +2476,13 @@ class $CrusadeForcesTable extends CrusadeForces
   List<GeneratedColumn> get $columns =>
       [id, crusadeFactionKeyword, description, createdAt, updatedAt];
   @override
-  $CrusadeForcesTable get asDslTable => this;
+  $CrusadeForceEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'crusade_forces';
+  String get $tableName => _alias ?? 'crusade_force_entities';
   @override
-  final String actualTableName = 'crusade_forces';
+  final String actualTableName = 'crusade_force_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<CrusadeForce> instance,
+  VerificationContext validateIntegrity(Insertable<CrusadeForceEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -2512,18 +2521,18 @@ class $CrusadeForcesTable extends CrusadeForces
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  CrusadeForce map(Map<String, dynamic> data, {String tablePrefix}) {
+  CrusadeForceEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return CrusadeForce.fromData(data, _db, prefix: effectivePrefix);
+    return CrusadeForceEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $CrusadeForcesTable createAlias(String alias) {
-    return $CrusadeForcesTable(_db, alias);
+  $CrusadeForceEntitiesTable createAlias(String alias) {
+    return $CrusadeForceEntitiesTable(_db, alias);
   }
 }
 
-class Note extends DataClass implements Insertable<Note> {
+class NoteEntity extends DataClass implements Insertable<NoteEntity> {
   final int id;
   final int crusadeCardId;
   final int orderOfBattleId;
@@ -2531,7 +2540,7 @@ class Note extends DataClass implements Insertable<Note> {
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  Note(
+  NoteEntity(
       {@required this.id,
       this.crusadeCardId,
       this.orderOfBattleId,
@@ -2539,13 +2548,13 @@ class Note extends DataClass implements Insertable<Note> {
       @required this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory Note.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory NoteEntity.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return Note(
+    return NoteEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -2588,8 +2597,8 @@ class Note extends DataClass implements Insertable<Note> {
     return map;
   }
 
-  NotesCompanion toCompanion(bool nullToAbsent) {
-    return NotesCompanion(
+  NoteEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return NoteEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -2611,10 +2620,10 @@ class Note extends DataClass implements Insertable<Note> {
     );
   }
 
-  factory Note.fromJson(Map<String, dynamic> json,
+  factory NoteEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return Note(
+    return NoteEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       orderOfBattleId: serializer.fromJson<int>(json['orderOfBattleId']),
@@ -2638,7 +2647,7 @@ class Note extends DataClass implements Insertable<Note> {
     };
   }
 
-  Note copyWith(
+  NoteEntity copyWith(
           {int id,
           int crusadeCardId,
           int orderOfBattleId,
@@ -2646,7 +2655,7 @@ class Note extends DataClass implements Insertable<Note> {
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      Note(
+      NoteEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         orderOfBattleId: orderOfBattleId ?? this.orderOfBattleId,
@@ -2657,7 +2666,7 @@ class Note extends DataClass implements Insertable<Note> {
       );
   @override
   String toString() {
-    return (StringBuffer('Note(')
+    return (StringBuffer('NoteEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('orderOfBattleId: $orderOfBattleId, ')
@@ -2683,7 +2692,7 @@ class Note extends DataClass implements Insertable<Note> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is Note &&
+      (other is NoteEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.orderOfBattleId == this.orderOfBattleId &&
@@ -2693,7 +2702,7 @@ class Note extends DataClass implements Insertable<Note> {
           other.updatedAt == this.updatedAt);
 }
 
-class NotesCompanion extends UpdateCompanion<Note> {
+class NoteEntitiesCompanion extends UpdateCompanion<NoteEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<int> orderOfBattleId;
@@ -2701,7 +2710,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const NotesCompanion({
+  const NoteEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.orderOfBattleId = const Value.absent(),
@@ -2710,7 +2719,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  NotesCompanion.insert({
+  NoteEntitiesCompanion.insert({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.orderOfBattleId = const Value.absent(),
@@ -2722,7 +2731,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
         description = Value(description),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<Note> custom({
+  static Insertable<NoteEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<int> orderOfBattleId,
@@ -2742,7 +2751,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
     });
   }
 
-  NotesCompanion copyWith(
+  NoteEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<int> orderOfBattleId,
@@ -2750,7 +2759,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return NotesCompanion(
+    return NoteEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       orderOfBattleId: orderOfBattleId ?? this.orderOfBattleId,
@@ -2790,7 +2799,7 @@ class NotesCompanion extends UpdateCompanion<Note> {
 
   @override
   String toString() {
-    return (StringBuffer('NotesCompanion(')
+    return (StringBuffer('NoteEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('orderOfBattleId: $orderOfBattleId, ')
@@ -2803,10 +2812,11 @@ class NotesCompanion extends UpdateCompanion<Note> {
   }
 }
 
-class $NotesTable extends Notes with TableInfo<$NotesTable, Note> {
+class $NoteEntitiesTable extends NoteEntities
+    with TableInfo<$NoteEntitiesTable, NoteEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $NotesTable(this._db, [this._alias]);
+  $NoteEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -2902,13 +2912,13 @@ class $NotesTable extends Notes with TableInfo<$NotesTable, Note> {
         updatedAt
       ];
   @override
-  $NotesTable get asDslTable => this;
+  $NoteEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'notes';
+  String get $tableName => _alias ?? 'note_entities';
   @override
-  final String actualTableName = 'notes';
+  final String actualTableName = 'note_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<Note> instance,
+  VerificationContext validateIntegrity(Insertable<NoteEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -2959,18 +2969,19 @@ class $NotesTable extends Notes with TableInfo<$NotesTable, Note> {
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  Note map(Map<String, dynamic> data, {String tablePrefix}) {
+  NoteEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return Note.fromData(data, _db, prefix: effectivePrefix);
+    return NoteEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $NotesTable createAlias(String alias) {
-    return $NotesTable(_db, alias);
+  $NoteEntitiesTable createAlias(String alias) {
+    return $NoteEntitiesTable(_db, alias);
   }
 }
 
-class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
+class OrderOfBattleEntity extends DataClass
+    implements Insertable<OrderOfBattleEntity> {
   final int id;
   final int crusadeForceId;
   final int supplyLimit;
@@ -2980,7 +2991,7 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
   final int battlesLost;
   final DateTime createdAt;
   final DateTime updatedAt;
-  OrderOfBattle(
+  OrderOfBattleEntity(
       {@required this.id,
       @required this.crusadeForceId,
       @required this.supplyLimit,
@@ -2990,13 +3001,13 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
       @required this.battlesLost,
       @required this.createdAt,
       @required this.updatedAt});
-  factory OrderOfBattle.fromData(
+  factory OrderOfBattleEntity.fromData(
       Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return OrderOfBattle(
+    return OrderOfBattleEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeForceId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_force_id']),
@@ -3049,8 +3060,8 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
     return map;
   }
 
-  OrderOfBattlesCompanion toCompanion(bool nullToAbsent) {
-    return OrderOfBattlesCompanion(
+  OrderOfBattleEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return OrderOfBattleEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeForceId: crusadeForceId == null && nullToAbsent
           ? const Value.absent()
@@ -3079,10 +3090,10 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
     );
   }
 
-  factory OrderOfBattle.fromJson(Map<String, dynamic> json,
+  factory OrderOfBattleEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return OrderOfBattle(
+    return OrderOfBattleEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeForceId: serializer.fromJson<int>(json['crusadeForceId']),
       supplyLimit: serializer.fromJson<int>(json['supplyLimit']),
@@ -3110,7 +3121,7 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
     };
   }
 
-  OrderOfBattle copyWith(
+  OrderOfBattleEntity copyWith(
           {int id,
           int crusadeForceId,
           int supplyLimit,
@@ -3120,7 +3131,7 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
           int battlesLost,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      OrderOfBattle(
+      OrderOfBattleEntity(
         id: id ?? this.id,
         crusadeForceId: crusadeForceId ?? this.crusadeForceId,
         supplyLimit: supplyLimit ?? this.supplyLimit,
@@ -3133,7 +3144,7 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
       );
   @override
   String toString() {
-    return (StringBuffer('OrderOfBattle(')
+    return (StringBuffer('OrderOfBattleEntity(')
           ..write('id: $id, ')
           ..write('crusadeForceId: $crusadeForceId, ')
           ..write('supplyLimit: $supplyLimit, ')
@@ -3167,7 +3178,7 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is OrderOfBattle &&
+      (other is OrderOfBattleEntity &&
           other.id == this.id &&
           other.crusadeForceId == this.crusadeForceId &&
           other.supplyLimit == this.supplyLimit &&
@@ -3179,7 +3190,8 @@ class OrderOfBattle extends DataClass implements Insertable<OrderOfBattle> {
           other.updatedAt == this.updatedAt);
 }
 
-class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
+class OrderOfBattleEntitiesCompanion
+    extends UpdateCompanion<OrderOfBattleEntity> {
   final Value<int> id;
   final Value<int> crusadeForceId;
   final Value<int> supplyLimit;
@@ -3189,7 +3201,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
   final Value<int> battlesLost;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const OrderOfBattlesCompanion({
+  const OrderOfBattleEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeForceId = const Value.absent(),
     this.supplyLimit = const Value.absent(),
@@ -3200,7 +3212,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  OrderOfBattlesCompanion.insert({
+  OrderOfBattleEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeForceId,
     @required int supplyLimit,
@@ -3218,7 +3230,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
         battlesLost = Value(battlesLost),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<OrderOfBattle> custom({
+  static Insertable<OrderOfBattleEntity> custom({
     Expression<int> id,
     Expression<int> crusadeForceId,
     Expression<int> supplyLimit,
@@ -3242,7 +3254,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
     });
   }
 
-  OrderOfBattlesCompanion copyWith(
+  OrderOfBattleEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeForceId,
       Value<int> supplyLimit,
@@ -3252,7 +3264,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
       Value<int> battlesLost,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return OrderOfBattlesCompanion(
+    return OrderOfBattleEntitiesCompanion(
       id: id ?? this.id,
       crusadeForceId: crusadeForceId ?? this.crusadeForceId,
       supplyLimit: supplyLimit ?? this.supplyLimit,
@@ -3300,7 +3312,7 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
 
   @override
   String toString() {
-    return (StringBuffer('OrderOfBattlesCompanion(')
+    return (StringBuffer('OrderOfBattleEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeForceId: $crusadeForceId, ')
           ..write('supplyLimit: $supplyLimit, ')
@@ -3315,11 +3327,11 @@ class OrderOfBattlesCompanion extends UpdateCompanion<OrderOfBattle> {
   }
 }
 
-class $OrderOfBattlesTable extends OrderOfBattles
-    with TableInfo<$OrderOfBattlesTable, OrderOfBattle> {
+class $OrderOfBattleEntitiesTable extends OrderOfBattleEntities
+    with TableInfo<$OrderOfBattleEntitiesTable, OrderOfBattleEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $OrderOfBattlesTable(this._db, [this._alias]);
+  $OrderOfBattleEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -3448,13 +3460,14 @@ class $OrderOfBattlesTable extends OrderOfBattles
         updatedAt
       ];
   @override
-  $OrderOfBattlesTable get asDslTable => this;
+  $OrderOfBattleEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'order_of_battles';
+  String get $tableName => _alias ?? 'order_of_battle_entities';
   @override
-  final String actualTableName = 'order_of_battles';
+  final String actualTableName = 'order_of_battle_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<OrderOfBattle> instance,
+  VerificationContext validateIntegrity(
+      Insertable<OrderOfBattleEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -3527,18 +3540,19 @@ class $OrderOfBattlesTable extends OrderOfBattles
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  OrderOfBattle map(Map<String, dynamic> data, {String tablePrefix}) {
+  OrderOfBattleEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return OrderOfBattle.fromData(data, _db, prefix: effectivePrefix);
+    return OrderOfBattleEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $OrderOfBattlesTable createAlias(String alias) {
-    return $OrderOfBattlesTable(_db, alias);
+  $OrderOfBattleEntitiesTable createAlias(String alias) {
+    return $OrderOfBattleEntitiesTable(_db, alias);
   }
 }
 
-class PsychicPower extends DataClass implements Insertable<PsychicPower> {
+class PsychicPowerEntity extends DataClass
+    implements Insertable<PsychicPowerEntity> {
   final int id;
   final int crusadeCardId;
   final String name;
@@ -3547,7 +3561,7 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
   final bool fromBattleHonor;
   final DateTime createdAt;
   final DateTime updatedAt;
-  PsychicPower(
+  PsychicPowerEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.name,
@@ -3556,14 +3570,15 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
       @required this.fromBattleHonor,
       @required this.createdAt,
       @required this.updatedAt});
-  factory PsychicPower.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory PsychicPowerEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final boolType = db.typeSystem.forDartType<bool>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return PsychicPower(
+    return PsychicPowerEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -3610,8 +3625,8 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
     return map;
   }
 
-  PsychicPowersCompanion toCompanion(bool nullToAbsent) {
-    return PsychicPowersCompanion(
+  PsychicPowerEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return PsychicPowerEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -3635,10 +3650,10 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
     );
   }
 
-  factory PsychicPower.fromJson(Map<String, dynamic> json,
+  factory PsychicPowerEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return PsychicPower(
+    return PsychicPowerEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       name: serializer.fromJson<String>(json['name']),
@@ -3664,7 +3679,7 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
     };
   }
 
-  PsychicPower copyWith(
+  PsychicPowerEntity copyWith(
           {int id,
           int crusadeCardId,
           String name,
@@ -3673,7 +3688,7 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
           bool fromBattleHonor,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      PsychicPower(
+      PsychicPowerEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         name: name ?? this.name,
@@ -3685,7 +3700,7 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
       );
   @override
   String toString() {
-    return (StringBuffer('PsychicPower(')
+    return (StringBuffer('PsychicPowerEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -3714,7 +3729,7 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is PsychicPower &&
+      (other is PsychicPowerEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.name == this.name &&
@@ -3725,7 +3740,8 @@ class PsychicPower extends DataClass implements Insertable<PsychicPower> {
           other.updatedAt == this.updatedAt);
 }
 
-class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
+class PsychicPowerEntitiesCompanion
+    extends UpdateCompanion<PsychicPowerEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<String> name;
@@ -3734,7 +3750,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
   final Value<bool> fromBattleHonor;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const PsychicPowersCompanion({
+  const PsychicPowerEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.name = const Value.absent(),
@@ -3744,7 +3760,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  PsychicPowersCompanion.insert({
+  PsychicPowerEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required String name,
@@ -3758,7 +3774,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
         warpCharge = Value(warpCharge),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<PsychicPower> custom({
+  static Insertable<PsychicPowerEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<String> name,
@@ -3780,7 +3796,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
     });
   }
 
-  PsychicPowersCompanion copyWith(
+  PsychicPowerEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<String> name,
@@ -3789,7 +3805,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
       Value<bool> fromBattleHonor,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return PsychicPowersCompanion(
+    return PsychicPowerEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       name: name ?? this.name,
@@ -3833,7 +3849,7 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
 
   @override
   String toString() {
-    return (StringBuffer('PsychicPowersCompanion(')
+    return (StringBuffer('PsychicPowerEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -3847,11 +3863,11 @@ class PsychicPowersCompanion extends UpdateCompanion<PsychicPower> {
   }
 }
 
-class $PsychicPowersTable extends PsychicPowers
-    with TableInfo<$PsychicPowersTable, PsychicPower> {
+class $PsychicPowerEntitiesTable extends PsychicPowerEntities
+    with TableInfo<$PsychicPowerEntitiesTable, PsychicPowerEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $PsychicPowersTable(this._db, [this._alias]);
+  $PsychicPowerEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -3957,13 +3973,13 @@ class $PsychicPowersTable extends PsychicPowers
         updatedAt
       ];
   @override
-  $PsychicPowersTable get asDslTable => this;
+  $PsychicPowerEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'psychic_powers';
+  String get $tableName => _alias ?? 'psychic_power_entities';
   @override
-  final String actualTableName = 'psychic_powers';
+  final String actualTableName = 'psychic_power_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<PsychicPower> instance,
+  VerificationContext validateIntegrity(Insertable<PsychicPowerEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -4022,38 +4038,38 @@ class $PsychicPowersTable extends PsychicPowers
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  PsychicPower map(Map<String, dynamic> data, {String tablePrefix}) {
+  PsychicPowerEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return PsychicPower.fromData(data, _db, prefix: effectivePrefix);
+    return PsychicPowerEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $PsychicPowersTable createAlias(String alias) {
-    return $PsychicPowersTable(_db, alias);
+  $PsychicPowerEntitiesTable createAlias(String alias) {
+    return $PsychicPowerEntitiesTable(_db, alias);
   }
 }
 
-class Relic extends DataClass implements Insertable<Relic> {
+class RelicEntity extends DataClass implements Insertable<RelicEntity> {
   final int id;
   final int crusadeCardId;
   final String name;
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  Relic(
+  RelicEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.name,
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory Relic.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory RelicEntity.fromData(Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return Relic(
+    return RelicEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -4090,8 +4106,8 @@ class Relic extends DataClass implements Insertable<Relic> {
     return map;
   }
 
-  RelicsCompanion toCompanion(bool nullToAbsent) {
-    return RelicsCompanion(
+  RelicEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return RelicEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -4109,10 +4125,10 @@ class Relic extends DataClass implements Insertable<Relic> {
     );
   }
 
-  factory Relic.fromJson(Map<String, dynamic> json,
+  factory RelicEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return Relic(
+    return RelicEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       name: serializer.fromJson<String>(json['name']),
@@ -4134,14 +4150,14 @@ class Relic extends DataClass implements Insertable<Relic> {
     };
   }
 
-  Relic copyWith(
+  RelicEntity copyWith(
           {int id,
           int crusadeCardId,
           String name,
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      Relic(
+      RelicEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         name: name ?? this.name,
@@ -4151,7 +4167,7 @@ class Relic extends DataClass implements Insertable<Relic> {
       );
   @override
   String toString() {
-    return (StringBuffer('Relic(')
+    return (StringBuffer('RelicEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -4174,7 +4190,7 @@ class Relic extends DataClass implements Insertable<Relic> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is Relic &&
+      (other is RelicEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.name == this.name &&
@@ -4183,14 +4199,14 @@ class Relic extends DataClass implements Insertable<Relic> {
           other.updatedAt == this.updatedAt);
 }
 
-class RelicsCompanion extends UpdateCompanion<Relic> {
+class RelicEntitiesCompanion extends UpdateCompanion<RelicEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<String> name;
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const RelicsCompanion({
+  const RelicEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.name = const Value.absent(),
@@ -4198,7 +4214,7 @@ class RelicsCompanion extends UpdateCompanion<Relic> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  RelicsCompanion.insert({
+  RelicEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required String name,
@@ -4209,7 +4225,7 @@ class RelicsCompanion extends UpdateCompanion<Relic> {
         name = Value(name),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<Relic> custom({
+  static Insertable<RelicEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<String> name,
@@ -4227,14 +4243,14 @@ class RelicsCompanion extends UpdateCompanion<Relic> {
     });
   }
 
-  RelicsCompanion copyWith(
+  RelicEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<String> name,
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return RelicsCompanion(
+    return RelicEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       name: name ?? this.name,
@@ -4270,7 +4286,7 @@ class RelicsCompanion extends UpdateCompanion<Relic> {
 
   @override
   String toString() {
-    return (StringBuffer('RelicsCompanion(')
+    return (StringBuffer('RelicEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -4282,10 +4298,11 @@ class RelicsCompanion extends UpdateCompanion<Relic> {
   }
 }
 
-class $RelicsTable extends Relics with TableInfo<$RelicsTable, Relic> {
+class $RelicEntitiesTable extends RelicEntities
+    with TableInfo<$RelicEntitiesTable, RelicEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $RelicsTable(this._db, [this._alias]);
+  $RelicEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -4360,13 +4377,13 @@ class $RelicsTable extends Relics with TableInfo<$RelicsTable, Relic> {
   List<GeneratedColumn> get $columns =>
       [id, crusadeCardId, name, description, createdAt, updatedAt];
   @override
-  $RelicsTable get asDslTable => this;
+  $RelicEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'relics';
+  String get $tableName => _alias ?? 'relic_entities';
   @override
-  final String actualTableName = 'relics';
+  final String actualTableName = 'relic_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<Relic> instance,
+  VerificationContext validateIntegrity(Insertable<RelicEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -4411,38 +4428,39 @@ class $RelicsTable extends Relics with TableInfo<$RelicsTable, Relic> {
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  Relic map(Map<String, dynamic> data, {String tablePrefix}) {
+  RelicEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return Relic.fromData(data, _db, prefix: effectivePrefix);
+    return RelicEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $RelicsTable createAlias(String alias) {
-    return $RelicsTable(_db, alias);
+  $RelicEntitiesTable createAlias(String alias) {
+    return $RelicEntitiesTable(_db, alias);
   }
 }
 
-class UnitModel extends DataClass implements Insertable<UnitModel> {
+class UnitModelEntity extends DataClass implements Insertable<UnitModelEntity> {
   final int id;
   final int crusadeCardId;
   final String name;
   final String wargear;
   final DateTime createdAt;
   final DateTime updatedAt;
-  UnitModel(
+  UnitModelEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.name,
       @required this.wargear,
       @required this.createdAt,
       @required this.updatedAt});
-  factory UnitModel.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory UnitModelEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return UnitModel(
+    return UnitModelEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -4479,8 +4497,8 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
     return map;
   }
 
-  UnitModelsCompanion toCompanion(bool nullToAbsent) {
-    return UnitModelsCompanion(
+  UnitModelEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return UnitModelEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -4498,10 +4516,10 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
     );
   }
 
-  factory UnitModel.fromJson(Map<String, dynamic> json,
+  factory UnitModelEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return UnitModel(
+    return UnitModelEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       name: serializer.fromJson<String>(json['name']),
@@ -4523,14 +4541,14 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
     };
   }
 
-  UnitModel copyWith(
+  UnitModelEntity copyWith(
           {int id,
           int crusadeCardId,
           String name,
           String wargear,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      UnitModel(
+      UnitModelEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         name: name ?? this.name,
@@ -4540,7 +4558,7 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
       );
   @override
   String toString() {
-    return (StringBuffer('UnitModel(')
+    return (StringBuffer('UnitModelEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -4563,7 +4581,7 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is UnitModel &&
+      (other is UnitModelEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.name == this.name &&
@@ -4572,14 +4590,14 @@ class UnitModel extends DataClass implements Insertable<UnitModel> {
           other.updatedAt == this.updatedAt);
 }
 
-class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
+class UnitModelEntitiesCompanion extends UpdateCompanion<UnitModelEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<String> name;
   final Value<String> wargear;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const UnitModelsCompanion({
+  const UnitModelEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.name = const Value.absent(),
@@ -4587,7 +4605,7 @@ class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  UnitModelsCompanion.insert({
+  UnitModelEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required String name,
@@ -4599,7 +4617,7 @@ class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
         wargear = Value(wargear),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<UnitModel> custom({
+  static Insertable<UnitModelEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<String> name,
@@ -4617,14 +4635,14 @@ class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
     });
   }
 
-  UnitModelsCompanion copyWith(
+  UnitModelEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<String> name,
       Value<String> wargear,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return UnitModelsCompanion(
+    return UnitModelEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       name: name ?? this.name,
@@ -4660,7 +4678,7 @@ class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
 
   @override
   String toString() {
-    return (StringBuffer('UnitModelsCompanion(')
+    return (StringBuffer('UnitModelEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -4672,11 +4690,11 @@ class UnitModelsCompanion extends UpdateCompanion<UnitModel> {
   }
 }
 
-class $UnitModelsTable extends UnitModels
-    with TableInfo<$UnitModelsTable, UnitModel> {
+class $UnitModelEntitiesTable extends UnitModelEntities
+    with TableInfo<$UnitModelEntitiesTable, UnitModelEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $UnitModelsTable(this._db, [this._alias]);
+  $UnitModelEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -4746,13 +4764,13 @@ class $UnitModelsTable extends UnitModels
   List<GeneratedColumn> get $columns =>
       [id, crusadeCardId, name, wargear, createdAt, updatedAt];
   @override
-  $UnitModelsTable get asDslTable => this;
+  $UnitModelEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'unit_models';
+  String get $tableName => _alias ?? 'unit_model_entities';
   @override
-  final String actualTableName = 'unit_models';
+  final String actualTableName = 'unit_model_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<UnitModel> instance,
+  VerificationContext validateIntegrity(Insertable<UnitModelEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -4797,38 +4815,40 @@ class $UnitModelsTable extends UnitModels
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  UnitModel map(Map<String, dynamic> data, {String tablePrefix}) {
+  UnitModelEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return UnitModel.fromData(data, _db, prefix: effectivePrefix);
+    return UnitModelEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $UnitModelsTable createAlias(String alias) {
-    return $UnitModelsTable(_db, alias);
+  $UnitModelEntitiesTable createAlias(String alias) {
+    return $UnitModelEntitiesTable(_db, alias);
   }
 }
 
-class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
+class WarlordTraitEntity extends DataClass
+    implements Insertable<WarlordTraitEntity> {
   final int id;
   final int crusadeCardId;
   final String name;
   final String description;
   final DateTime createdAt;
   final DateTime updatedAt;
-  WarlordTrait(
+  WarlordTraitEntity(
       {@required this.id,
       @required this.crusadeCardId,
       @required this.name,
       this.description,
       @required this.createdAt,
       @required this.updatedAt});
-  factory WarlordTrait.fromData(Map<String, dynamic> data, GeneratedDatabase db,
+  factory WarlordTraitEntity.fromData(
+      Map<String, dynamic> data, GeneratedDatabase db,
       {String prefix}) {
     final effectivePrefix = prefix ?? '';
     final intType = db.typeSystem.forDartType<int>();
     final stringType = db.typeSystem.forDartType<String>();
     final dateTimeType = db.typeSystem.forDartType<DateTime>();
-    return WarlordTrait(
+    return WarlordTraitEntity(
       id: intType.mapFromDatabaseResponse(data['${effectivePrefix}id']),
       crusadeCardId: intType
           .mapFromDatabaseResponse(data['${effectivePrefix}crusade_card_id']),
@@ -4865,8 +4885,8 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
     return map;
   }
 
-  WarlordTraitsCompanion toCompanion(bool nullToAbsent) {
-    return WarlordTraitsCompanion(
+  WarlordTraitEntitiesCompanion toCompanion(bool nullToAbsent) {
+    return WarlordTraitEntitiesCompanion(
       id: id == null && nullToAbsent ? const Value.absent() : Value(id),
       crusadeCardId: crusadeCardId == null && nullToAbsent
           ? const Value.absent()
@@ -4884,10 +4904,10 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
     );
   }
 
-  factory WarlordTrait.fromJson(Map<String, dynamic> json,
+  factory WarlordTraitEntity.fromJson(Map<String, dynamic> json,
       {ValueSerializer serializer}) {
     serializer ??= moorRuntimeOptions.defaultSerializer;
-    return WarlordTrait(
+    return WarlordTraitEntity(
       id: serializer.fromJson<int>(json['id']),
       crusadeCardId: serializer.fromJson<int>(json['crusadeCardId']),
       name: serializer.fromJson<String>(json['name']),
@@ -4909,14 +4929,14 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
     };
   }
 
-  WarlordTrait copyWith(
+  WarlordTraitEntity copyWith(
           {int id,
           int crusadeCardId,
           String name,
           String description,
           DateTime createdAt,
           DateTime updatedAt}) =>
-      WarlordTrait(
+      WarlordTraitEntity(
         id: id ?? this.id,
         crusadeCardId: crusadeCardId ?? this.crusadeCardId,
         name: name ?? this.name,
@@ -4926,7 +4946,7 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
       );
   @override
   String toString() {
-    return (StringBuffer('WarlordTrait(')
+    return (StringBuffer('WarlordTraitEntity(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -4949,7 +4969,7 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
   @override
   bool operator ==(dynamic other) =>
       identical(this, other) ||
-      (other is WarlordTrait &&
+      (other is WarlordTraitEntity &&
           other.id == this.id &&
           other.crusadeCardId == this.crusadeCardId &&
           other.name == this.name &&
@@ -4958,14 +4978,15 @@ class WarlordTrait extends DataClass implements Insertable<WarlordTrait> {
           other.updatedAt == this.updatedAt);
 }
 
-class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
+class WarlordTraitEntitiesCompanion
+    extends UpdateCompanion<WarlordTraitEntity> {
   final Value<int> id;
   final Value<int> crusadeCardId;
   final Value<String> name;
   final Value<String> description;
   final Value<DateTime> createdAt;
   final Value<DateTime> updatedAt;
-  const WarlordTraitsCompanion({
+  const WarlordTraitEntitiesCompanion({
     this.id = const Value.absent(),
     this.crusadeCardId = const Value.absent(),
     this.name = const Value.absent(),
@@ -4973,7 +4994,7 @@ class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
     this.createdAt = const Value.absent(),
     this.updatedAt = const Value.absent(),
   });
-  WarlordTraitsCompanion.insert({
+  WarlordTraitEntitiesCompanion.insert({
     this.id = const Value.absent(),
     @required int crusadeCardId,
     @required String name,
@@ -4984,7 +5005,7 @@ class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
         name = Value(name),
         createdAt = Value(createdAt),
         updatedAt = Value(updatedAt);
-  static Insertable<WarlordTrait> custom({
+  static Insertable<WarlordTraitEntity> custom({
     Expression<int> id,
     Expression<int> crusadeCardId,
     Expression<String> name,
@@ -5002,14 +5023,14 @@ class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
     });
   }
 
-  WarlordTraitsCompanion copyWith(
+  WarlordTraitEntitiesCompanion copyWith(
       {Value<int> id,
       Value<int> crusadeCardId,
       Value<String> name,
       Value<String> description,
       Value<DateTime> createdAt,
       Value<DateTime> updatedAt}) {
-    return WarlordTraitsCompanion(
+    return WarlordTraitEntitiesCompanion(
       id: id ?? this.id,
       crusadeCardId: crusadeCardId ?? this.crusadeCardId,
       name: name ?? this.name,
@@ -5045,7 +5066,7 @@ class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
 
   @override
   String toString() {
-    return (StringBuffer('WarlordTraitsCompanion(')
+    return (StringBuffer('WarlordTraitEntitiesCompanion(')
           ..write('id: $id, ')
           ..write('crusadeCardId: $crusadeCardId, ')
           ..write('name: $name, ')
@@ -5057,11 +5078,11 @@ class WarlordTraitsCompanion extends UpdateCompanion<WarlordTrait> {
   }
 }
 
-class $WarlordTraitsTable extends WarlordTraits
-    with TableInfo<$WarlordTraitsTable, WarlordTrait> {
+class $WarlordTraitEntitiesTable extends WarlordTraitEntities
+    with TableInfo<$WarlordTraitEntitiesTable, WarlordTraitEntity> {
   final GeneratedDatabase _db;
   final String _alias;
-  $WarlordTraitsTable(this._db, [this._alias]);
+  $WarlordTraitEntitiesTable(this._db, [this._alias]);
   final VerificationMeta _idMeta = const VerificationMeta('id');
   GeneratedIntColumn _id;
   @override
@@ -5136,13 +5157,13 @@ class $WarlordTraitsTable extends WarlordTraits
   List<GeneratedColumn> get $columns =>
       [id, crusadeCardId, name, description, createdAt, updatedAt];
   @override
-  $WarlordTraitsTable get asDslTable => this;
+  $WarlordTraitEntitiesTable get asDslTable => this;
   @override
-  String get $tableName => _alias ?? 'warlord_traits';
+  String get $tableName => _alias ?? 'warlord_trait_entities';
   @override
-  final String actualTableName = 'warlord_traits';
+  final String actualTableName = 'warlord_trait_entities';
   @override
-  VerificationContext validateIntegrity(Insertable<WarlordTrait> instance,
+  VerificationContext validateIntegrity(Insertable<WarlordTraitEntity> instance,
       {bool isInserting = false}) {
     final context = VerificationContext();
     final data = instance.toColumns(true);
@@ -5187,45 +5208,49 @@ class $WarlordTraitsTable extends WarlordTraits
   @override
   Set<GeneratedColumn> get $primaryKey => {id};
   @override
-  WarlordTrait map(Map<String, dynamic> data, {String tablePrefix}) {
+  WarlordTraitEntity map(Map<String, dynamic> data, {String tablePrefix}) {
     final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : null;
-    return WarlordTrait.fromData(data, _db, prefix: effectivePrefix);
+    return WarlordTraitEntity.fromData(data, _db, prefix: effectivePrefix);
   }
 
   @override
-  $WarlordTraitsTable createAlias(String alias) {
-    return $WarlordTraitsTable(_db, alias);
+  $WarlordTraitEntitiesTable createAlias(String alias) {
+    return $WarlordTraitEntitiesTable(_db, alias);
   }
 }
 
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(SqlTypeSystem.defaultInstance, e);
-  $BattleHonorsTable _battleHonors;
-  $BattleHonorsTable get battleHonors =>
-      _battleHonors ??= $BattleHonorsTable(this);
-  $BattleScarsTable _battleScars;
-  $BattleScarsTable get battleScars => _battleScars ??= $BattleScarsTable(this);
-  $CrusadeCardsTable _crusadeCards;
-  $CrusadeCardsTable get crusadeCards =>
-      _crusadeCards ??= $CrusadeCardsTable(this);
-  $CrusadeForcesTable _crusadeForces;
-  $CrusadeForcesTable get crusadeForces =>
-      _crusadeForces ??= $CrusadeForcesTable(this);
-  $NotesTable _notes;
-  $NotesTable get notes => _notes ??= $NotesTable(this);
-  $OrderOfBattlesTable _orderOfBattles;
-  $OrderOfBattlesTable get orderOfBattles =>
-      _orderOfBattles ??= $OrderOfBattlesTable(this);
-  $PsychicPowersTable _psychicPowers;
-  $PsychicPowersTable get psychicPowers =>
-      _psychicPowers ??= $PsychicPowersTable(this);
-  $RelicsTable _relics;
-  $RelicsTable get relics => _relics ??= $RelicsTable(this);
-  $UnitModelsTable _unitModels;
-  $UnitModelsTable get unitModels => _unitModels ??= $UnitModelsTable(this);
-  $WarlordTraitsTable _warlordTraits;
-  $WarlordTraitsTable get warlordTraits =>
-      _warlordTraits ??= $WarlordTraitsTable(this);
+  $BattleHonorEntitiesTable _battleHonorEntities;
+  $BattleHonorEntitiesTable get battleHonorEntities =>
+      _battleHonorEntities ??= $BattleHonorEntitiesTable(this);
+  $BattleScarEntitiesTable _battleScarEntities;
+  $BattleScarEntitiesTable get battleScarEntities =>
+      _battleScarEntities ??= $BattleScarEntitiesTable(this);
+  $CrusadeCardEntitiesTable _crusadeCardEntities;
+  $CrusadeCardEntitiesTable get crusadeCardEntities =>
+      _crusadeCardEntities ??= $CrusadeCardEntitiesTable(this);
+  $CrusadeForceEntitiesTable _crusadeForceEntities;
+  $CrusadeForceEntitiesTable get crusadeForceEntities =>
+      _crusadeForceEntities ??= $CrusadeForceEntitiesTable(this);
+  $NoteEntitiesTable _noteEntities;
+  $NoteEntitiesTable get noteEntities =>
+      _noteEntities ??= $NoteEntitiesTable(this);
+  $OrderOfBattleEntitiesTable _orderOfBattleEntities;
+  $OrderOfBattleEntitiesTable get orderOfBattleEntities =>
+      _orderOfBattleEntities ??= $OrderOfBattleEntitiesTable(this);
+  $PsychicPowerEntitiesTable _psychicPowerEntities;
+  $PsychicPowerEntitiesTable get psychicPowerEntities =>
+      _psychicPowerEntities ??= $PsychicPowerEntitiesTable(this);
+  $RelicEntitiesTable _relicEntities;
+  $RelicEntitiesTable get relicEntities =>
+      _relicEntities ??= $RelicEntitiesTable(this);
+  $UnitModelEntitiesTable _unitModelEntities;
+  $UnitModelEntitiesTable get unitModelEntities =>
+      _unitModelEntities ??= $UnitModelEntitiesTable(this);
+  $WarlordTraitEntitiesTable _warlordTraitEntities;
+  $WarlordTraitEntitiesTable get warlordTraitEntities =>
+      _warlordTraitEntities ??= $WarlordTraitEntitiesTable(this);
   BattleHonorDao _battleHonorDao;
   BattleHonorDao get battleHonorDao =>
       _battleHonorDao ??= BattleHonorDao(this as AppDatabase);
@@ -5258,16 +5283,16 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   Iterable<TableInfo> get allTables => allSchemaEntities.whereType<TableInfo>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [
-        battleHonors,
-        battleScars,
-        crusadeCards,
-        crusadeForces,
-        notes,
-        orderOfBattles,
-        psychicPowers,
-        relics,
-        unitModels,
-        warlordTraits
+        battleHonorEntities,
+        battleScarEntities,
+        crusadeCardEntities,
+        crusadeForceEntities,
+        noteEntities,
+        orderOfBattleEntities,
+        psychicPowerEntities,
+        relicEntities,
+        unitModelEntities,
+        warlordTraitEntities
       ];
 }
 
@@ -5276,32 +5301,40 @@ abstract class _$AppDatabase extends GeneratedDatabase {
 // **************************************************************************
 
 mixin _$BattleHonorDaoMixin on DatabaseAccessor<AppDatabase> {
-  $BattleHonorsTable get battleHonors => attachedDatabase.battleHonors;
+  $BattleHonorEntitiesTable get battleHonorEntities =>
+      attachedDatabase.battleHonorEntities;
 }
 mixin _$BattleScarDaoMixin on DatabaseAccessor<AppDatabase> {
-  $BattleScarsTable get battleScars => attachedDatabase.battleScars;
+  $BattleScarEntitiesTable get battleScarEntities =>
+      attachedDatabase.battleScarEntities;
 }
 mixin _$CrusadeCardDaoMixin on DatabaseAccessor<AppDatabase> {
-  $CrusadeCardsTable get crusadeCards => attachedDatabase.crusadeCards;
+  $CrusadeCardEntitiesTable get crusadeCardEntities =>
+      attachedDatabase.crusadeCardEntities;
 }
 mixin _$CrusadeForceDaoMixin on DatabaseAccessor<AppDatabase> {
-  $CrusadeForcesTable get crusadeForces => attachedDatabase.crusadeForces;
+  $CrusadeForceEntitiesTable get crusadeForceEntities =>
+      attachedDatabase.crusadeForceEntities;
 }
 mixin _$NoteDaoMixin on DatabaseAccessor<AppDatabase> {
-  $NotesTable get notes => attachedDatabase.notes;
+  $NoteEntitiesTable get noteEntities => attachedDatabase.noteEntities;
 }
 mixin _$OrderOfBattleDaoMixin on DatabaseAccessor<AppDatabase> {
-  $OrderOfBattlesTable get orderOfBattles => attachedDatabase.orderOfBattles;
+  $OrderOfBattleEntitiesTable get orderOfBattleEntities =>
+      attachedDatabase.orderOfBattleEntities;
 }
 mixin _$PsychicPowerDaoMixin on DatabaseAccessor<AppDatabase> {
-  $PsychicPowersTable get psychicPowers => attachedDatabase.psychicPowers;
+  $PsychicPowerEntitiesTable get psychicPowerEntities =>
+      attachedDatabase.psychicPowerEntities;
 }
 mixin _$RelicDaoMixin on DatabaseAccessor<AppDatabase> {
-  $RelicsTable get relics => attachedDatabase.relics;
+  $RelicEntitiesTable get relicEntities => attachedDatabase.relicEntities;
 }
 mixin _$UnitModelDaoMixin on DatabaseAccessor<AppDatabase> {
-  $UnitModelsTable get unitModels => attachedDatabase.unitModels;
+  $UnitModelEntitiesTable get unitModelEntities =>
+      attachedDatabase.unitModelEntities;
 }
 mixin _$WarlordTraitDaoMixin on DatabaseAccessor<AppDatabase> {
-  $WarlordTraitsTable get warlordTraits => attachedDatabase.warlordTraits;
+  $WarlordTraitEntitiesTable get warlordTraitEntities =>
+      attachedDatabase.warlordTraitEntities;
 }

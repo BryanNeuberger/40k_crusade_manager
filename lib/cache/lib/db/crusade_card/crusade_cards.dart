@@ -1,6 +1,7 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
-class CrusadeCards extends Table {
+@DataClassName("CrusadeCardEntity")
+class CrusadeCardEntities extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get orderOfBattleId => integer()();
   IntColumn get powerRating => integer()();

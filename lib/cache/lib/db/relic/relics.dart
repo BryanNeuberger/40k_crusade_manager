@@ -1,6 +1,7 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
-class Relics extends Table {
+@DataClassName("RelicEntity")
+class RelicEntities extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get crusadeCardId => integer()();
   TextColumn get name => text().withLength(min: 1, max: 150)();

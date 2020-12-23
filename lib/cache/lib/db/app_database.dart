@@ -1,15 +1,15 @@
-// library db;
+library app_cache;
 
-import 'package:cache/db/battle_honor/battle_honors.dart';
-import 'package:cache/db/battle_scar/battle_scars.dart';
-import 'package:cache/db/crusade_card/crusade_cards.dart';
-import 'package:cache/db/crusade_force/crusade_forces.dart';
-import 'package:cache/db/note/notes.dart';
-import 'package:cache/db/order_of_battle/order_of_battles.dart';
-import 'package:cache/db/psychic_power/psychic_powers.dart';
-import 'package:cache/db/relic/relics.dart';
-import 'package:cache/db/unit_model/unit_models.dart';
-import 'package:cache/db/warlord_trait/warlord_traits.dart';
+import 'package:app_cache/db/battle_honor/battle_honors.dart';
+import 'package:app_cache/db/battle_scar/battle_scars.dart';
+import 'package:app_cache/db/crusade_card/crusade_cards.dart';
+import 'package:app_cache/db/crusade_force/crusade_forces.dart';
+import 'package:app_cache/db/note/notes.dart';
+import 'package:app_cache/db/order_of_battle/order_of_battles.dart';
+import 'package:app_cache/db/psychic_power/psychic_powers.dart';
+import 'package:app_cache/db/relic/relics.dart';
+import 'package:app_cache/db/unit_model/unit_models.dart';
+import 'package:app_cache/db/warlord_trait/warlord_traits.dart';
 import 'package:moor/moor.dart';
 import 'package:moor_flutter/moor_flutter.dart';
 
@@ -26,16 +26,16 @@ part './warlord_trait/warlord_trait_dao.dart';
 part 'app_database.g.dart';
 
 @UseMoor(tables: [
-  BattleHonors,
-  BattleScars,
-  CrusadeCards,
-  CrusadeForces,
-  Notes,
-  OrderOfBattles,
-  PsychicPowers,
-  Relics,
-  UnitModels,
-  WarlordTraits,
+  BattleHonorEntities,
+  BattleScarEntities,
+  CrusadeCardEntities,
+  CrusadeForceEntities,
+  NoteEntities,
+  OrderOfBattleEntities,
+  PsychicPowerEntities,
+  RelicEntities,
+  UnitModelEntities,
+  WarlordTraitEntities,
 ], daos: [
   BattleHonorDao,
   BattleScarDao,

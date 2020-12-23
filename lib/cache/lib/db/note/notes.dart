@@ -1,6 +1,7 @@
 import 'package:moor_flutter/moor_flutter.dart';
 
-class Notes extends Table {
+@DataClassName("NoteEntity")
+class NoteEntities extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get crusadeCardId => integer().nullable()();
   IntColumn get orderOfBattleId => integer().nullable()();
