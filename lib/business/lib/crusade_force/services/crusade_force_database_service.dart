@@ -3,10 +3,10 @@ import 'package:business/crusade_force/models/crusade_force.dart';
 import 'package:business/di/service_locator.dart';
 import 'package:business/utils/data_state.dart';
 
-class CrusadeForceDaoService {
+class CrusadeForceDatabaseService {
   CrusadeForceDao _dao;
 
-  CrusadeForceDaoService({CrusadeForceDao dao}) {
+  CrusadeForceDatabaseService({CrusadeForceDao dao}) {
     _dao = dao ?? serviceLocator<AppDatabase>().crusadeForceDao;
   }
 

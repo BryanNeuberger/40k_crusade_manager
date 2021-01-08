@@ -6,7 +6,7 @@ Store<AppState> store;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // await setupServiceLocator(); //TODO: Set up Getit
+  await setupServiceLocator();
   store = Store<AppState>(initialState: AppState.initialState());
   runApp(App());
 }
